@@ -1,0 +1,124 @@
+﻿#include <vector>
+using namespace std;
+
+namespace Island_Perimeter_463
+{
+    /*
+        Idea: 
+        - Count the total neighbor cells AND total valid cells.
+        - [total valid cells *4 == one island (if one cell is an island itself)] -
+          [total neighbor cells]
+
+        Time:  O(ROWS *COLS)
+        Space: O(1)
+    */
+    class Solution_Math_Counting_Easy_To_Read_Version
+    {
+    public:
+        int islandPerimeter(vector<vector<int>>& grid)
+        {
+            if (grid.empty())
+            {
+                return 0;
+            }
+
+            const int ROWS = grid.size();
+            const int COLS = grid[0].size();
+
+            int actual_num_of_neighbors_including_overlapped_neighbors = 0;
+            int num_valild_cells = 0;
+
+            for (int row = 0; row < ROWS; ++row)
+            {
+                for (int col = 0; col < COLS; ++col)
+                {
+                    if (grid[row][col] == 1)
+                    {
+                        ++num_valild_cells;
+
+                        actual_num_of_neighbors_including_overlapped_neighbors += ((row - 1) >= 0 && grid[row - 1][col] == 1);
+                        actual_num_of_neighbors_including_overlapped_neighbors += ((row + 1) < ROWS && grid[row + 1][col] == 1);
+                        actual_num_of_neighbors_including_overlapped_neighbors += ((col + 1) < COLS && grid[row][col + 1] == 1);
+                        actual_num_of_neighbors_including_overlapped_neighbors += ((col - 1) >= 0 && grid[row][col - 1] == 1);
+                    }
+                }
+            }
+
+            /*
+                NOTE:
+                island perimeter = [(number of valid cells * 4 expected neighbors) -
+                                    (actual number of neighbors (including overlapped neighbors))].
+            */
+            int island_perimeter = (num_valild_cells * 4 -
+                actual_num_of_neighbors_including_overlapped_neighbors);
+            return island_perimeter;
+        }
+    };
+
+    class Solution_Counting
+    {
+    public:
+        int islandPerimeter(vector<vector<int>>& grid)
+        {
+            if (grid.empty())
+            {
+                return 0;
+            }
+
+            const int ROWS = grid.size();
+            const int COLS = grid[0].size();
+
+            int numCells = 0;
+            int totalNeighbors = 0;
+
+            for (int row = 0; row < ROWS; ++row)
+            {
+                for (int col = 0; col < COLS; ++col)
+                {
+                    // NOTE: Only check valid cells.
+                    if (grid[row][col] == 1)
+                    {
+                        // Count the number of cells.
+                        // At the end, we will find the perimeter by
+                        // perimeter = (numCells *4),
+                        // assuming each cell is an island.
+                        ++numCells;
+
+                        // NOTE:
+                        // Count the total neighbors 
+                        // among all grid[row][col] == 1.
+                        // That means these neighbors can have overlapping edges.
+                        if (row > 0 && grid[row - 1][col] == 1)
+                        {
+                            ++totalNeighbors;
+                        }
+                        if (row < (ROWS - 1) && grid[row + 1][col] == 1)
+                        {
+                            ++totalNeighbors;
+                        }
+                        if (col > 0 && grid[row][col - 1] == 1)
+                        {
+                            ++totalNeighbors;
+                        }
+                        if (col < (COLS - 1) && grid[row][col + 1] == 1)
+                        {
+                            ++totalNeighbors;
+                        }
+                    }
+                }
+            }
+            return (numCells * 4) - (totalNeighbors);
+        }
+    };
+}
+
+/*
+    July 2020 LeetCoding Challenge.
+    07/07/2020
+
+    Facebook Onsite 2020
+    03/11/2020
+    02/19/2020
+    第二题，给一个2d matrix，算island的周长（可以有多个island，求所有最外边界的总长度）
+    https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=594773&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D192%26orderby%3Ddateline
+*/
