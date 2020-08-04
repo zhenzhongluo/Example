@@ -158,10 +158,4 @@ namespace Word_Search_212
         }
     };
 }
-/*
-    Microsoft 2020 2nd Round
-    07/21/2020
 
-    June 2020 LeetCoding Challenge.
-    06/30/2020
-*/
