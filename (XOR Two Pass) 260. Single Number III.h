@@ -56,7 +56,4 @@ namespace Single_Number_III_260
 
     July 2020 LeetCoding Challenge.
     07/23/2020
-
-    Tiktok 2020
-    06/22/2020
 */
