@@ -51,7 +51,3 @@ namespace All_Paths_From_Source_to_Target_797
         }
     };
 }
-/*
-    July 2020 LeetCoding Challenge.
-    07/24/2020
-*/
