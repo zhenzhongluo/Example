@@ -111,14 +111,3 @@ namespace Island_Perimeter_463
         }
     };
 }
-
-/*
-    July 2020 LeetCoding Challenge.
-    07/07/2020
-
-    Facebook Onsite 2020
-    03/11/2020
-    02/19/2020
-    第二题，给一个2d matrix，算island的周长（可以有多个island，求所有最外边界的总长度）
-    https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=594773&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D192%26orderby%3Ddateline
-*/
