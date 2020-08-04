@@ -3,15 +3,6 @@
 #include "ListNode.h"
 using namespace std;
 
-/*
-	Reference:
-	- https://zxi.mytechroad.com/blog/leetcode/leetcode-21-merge-two-sorted-lists/
-
-	11/10/2019
-	Microsoft 2019:
-	本人亲自做过的OA题
-	https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=569170&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D3%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311%26orderby%3Ddateline
-*/
 namespace Merge_Two_Sorted_Lists_21
 {
 	/*
@@ -144,22 +135,3 @@ namespace Merge_Two_Sorted_Lists_21
 		}
 	};
 }
-
-/*
-	Microsoft 2020 2nd Round
-	07/16/2020
-	Merge LinkedList (Recursion + Iteration两种方法)
-	https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=652145&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D3%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311%26orderby%3Ddateline
-	
-	Facebook Phone 2020
-	01/22/2020
-	2. 利口21; 返回第k小的数从m个升序排列的arrays
-	https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=584662&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311%26orderby%3Ddateline
-
-	Facebook 2019
-	LC 23: Merge K sorted list, so this could be the previous version of the interview problem
-	https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=473617&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311%26orderby%3Ddateline
-
-	再写merge 2 sorted LL
-	https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=474118&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311%26orderby%3Ddateline
-*/
